@@ -20,8 +20,9 @@
 </p>
 
 <p align="center">
-  <a href="#overview">Overview</a> &bull;
-  <a href="#compatibility">Compatibility</a> &bull;
+  <a href="#what-it-does">What it does</a> &bull;
+  <a href="#how-to-use">How to use</a> &bull;
+  <a href="#commands-and-permissions">Commands</a> &bull;
   <a href="#install">Install</a> &bull;
   <a href="https://github.com/TheNINJALLO/endstone-teleport-plugin/releases">Releases</a>
 </p>
@@ -30,11 +31,25 @@
 
 A teleport location management plugin for Endstone Bedrock servers. This release is aligned with Endstone 0.11.8 and Minecraft Bedrock Dedicated Server 1.26.40, and is distributed as a Python wheel for direct installation in an Endstone server.
 
-## Capabilities
+## What it does
 
-- Named teleport-location management
-- Endstone scoreboard integration
-- Player-friendly destination workflows
+- Turns tagged NPC/entity interactions into form-based teleport menus.
+- Stores multiple named destinations under each active entity tag.
+- Provides operator commands for tag registration and configuration reloads.
+
+## How to use
+
+1. Register a logical portal tag with `/tptag add <tag>`.
+2. Apply it to the intended entity with Bedrock's `/tag` command, then interact with that entity as an operator to configure destinations.
+3. Players interact with the tagged entity and select a saved location from the form.
+4. Use `/tptag list` to audit active tags and `/tpreload` after manual JSON edits.
+
+## Commands and permissions
+
+| Command / usage | What it does | Access |
+|---|---|---|
+| `/tptag list`<br>`/tptag add <tag: str>`<br>`/tptag remove <tag: str>` | Manage teleport entity tags | `teleport.admin` |
+| `/tpreload` | Reload teleport configuration from file | `teleport.admin` |
 
 ## Compatibility
 
